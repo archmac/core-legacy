@@ -1,0 +1,11 @@
+--- lib/libalpm/Makefile.old	2011-06-10 19:34:26.000000000 -0500
++++ lib/libalpm/Makefile	2011-06-10 19:35:22.000000000 -0500
+@@ -209,7 +209,7 @@ LDFLAGS = 
+ LIBICONV = -liconv
+ LIBINTL = 
+ LIBOBJS =  ${LIBOBJDIR}lstat$U.o
+-LIBS = -lssl -larchive 
++LIBS = -lssl -larchive  -lcrypto
+ LIBTOOL = $(SHELL) $(top_builddir)/libtool
+ LIB_VERSION = 6.0.3
+ LIB_VERSION_INFO = 6:3:0
