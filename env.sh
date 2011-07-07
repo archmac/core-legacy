@@ -1,3 +1,3 @@
-PATH="$PATH:/Library/Arch/bin"
-MANPATH="$MANPATH:/Library/Arch/share/man"
-CFLAGS="$CFLAGS -I/Library/Arch/include -L/Library/Arch/lib"
+PATH="$PATH:/Library/ArchMac/bin"
+MANPATH="$MANPATH:/Library/ArchMac/share/man"
+CFLAGS="$CFLAGS -I/Library/ArchMac/include -L/Library/ArchMac/lib"
