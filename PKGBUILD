@@ -1,7 +1,7 @@
 
 pkgname=osx-system
 pkgver=10.6
-pkgrel=7
+pkgrel=8
 pkgdesc='Software provided by OS X'
 arch=('any')
 url='http://www.apple.com/macosx'
