@@ -1,7 +1,7 @@
 
 pkgname=fakeroot
 pkgver=1.16
-pkgrel=5
+pkgrel=7
 pkgdesc="Gives a fake root environment, useful for building packages as a non-privileged user"
 arch=('i386')
 license=('GPL')
@@ -14,7 +14,7 @@ md5sums=('e8470aa7e965bfc74467de0e594e60b6')
 
 build() {
   cd $srcdir/$pkgname-$pkgver
-  ./configure --prefix=/Library/Arch \
+  ./configure --prefix=/Library/ArchMac \
     --disable-static --with-ipc=sysv
   make wrapped.h
   make libmacosx.la
@@ -26,7 +26,7 @@ package() {
   make DESTDIR=$pkgdir install
 
   # install README for sysv/tcp usage
-  mkdir -p $pkgdir/Library/Arch/share/doc/$pkgname
+  mkdir -p $pkgdir/Library/ArchMac/share/doc/$pkgname
   install -m644 $srcdir/$pkgname-$pkgver/README \
-    $pkgdir/Library/Arch/share/doc/$pkgname/README
+    $pkgdir/Library/ArchMac/share/doc/$pkgname/README
 }
