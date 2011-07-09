@@ -25,33 +25,33 @@ md5sums=('c36c18ed4d8ec69c0ecb4f9684266901'
 PKGEXT='.pkg.tar.gz'
 
 build() {
-  cd $srcdir/$pkgname-$pkgver
+    cd $srcdir/$pkgname-$pkgver
 
-  # to work with Macintosh's 'strip'
-  sed -i '' -e 's/--strip-debug/-S/' scripts/makepkg.sh.in
-  CFLAGS="-I/Library/ArchMac/include" \
-    ./configure --prefix=/Library/ArchMac --enable-doc
+    # to work with Macintosh's 'strip'
+    sed -i '' -e 's/--strip-debug/-S/' scripts/makepkg.sh.in
+    CFLAGS="-I/Library/ArchMac/include" \
+        ./configure --prefix=/Library/ArchMac --enable-doc
 
-  # to add required libraries
-  patch -p0 < $startdir/fix_libaplm_libs.patch
-  make
+    # to add required libraries
+    patch -p0 < $startdir/fix_libaplm_libs.patch
+    make
 }
 
 package() {
-  cd $srcdir/$pkgname-$pkgver
-  make DESTDIR=$pkgdir install
+    cd $srcdir/$pkgname-$pkgver
+    make DESTDIR=$pkgdir install
 
-  # install ArchMac-specific setup
-  install -m644 $srcdir/pacman.conf \
-    $pkgdir/Library/ArchMac/etc/pacman.conf
-  install -m644 $srcdir/makepkg.conf \
-    $pkgdir/Library/ArchMac/etc/makepkg.conf
+    # install ArchMac-specific setup
+    install -m644 $srcdir/pacman.conf \
+        $pkgdir/Library/ArchMac/etc/pacman.conf
+    install -m644 $srcdir/makepkg.conf \
+        $pkgdir/Library/ArchMac/etc/makepkg.conf
 
-  # install shell auto-completion
-  mkdir -p $pkgdir/Library/ArchMac/etc/bash_completion.d
-  install -m644 contrib/bash_completion \
-    $pkgdir/Library/ArchMac/etc/bash_completion.d/pacman
-  mkdir -p $pkgdir/Library/ArchMac/share/zsh/site-functions
-  install -m644 contrib/zsh_completion \
-    $pkgdir/Library/ArchMac/share/zsh/site-functions/_pacman
+    # install shell auto-completion
+    mkdir -p $pkgdir/Library/ArchMac/etc/bash_completion.d
+    install -m644 contrib/bash_completion \
+        $pkgdir/Library/ArchMac/etc/bash_completion.d/pacman
+    mkdir -p $pkgdir/Library/ArchMac/share/zsh/site-functions
+    install -m644 contrib/zsh_completion \
+        $pkgdir/Library/ArchMac/share/zsh/site-functions/_pacman
 }
