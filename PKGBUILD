@@ -13,20 +13,20 @@ source=(http://ftp.debian.org/pool/main/f/${pkgname}/${pkgname}_${pkgver}.orig.t
 md5sums=('e8470aa7e965bfc74467de0e594e60b6')
 
 build() {
-  cd $srcdir/$pkgname-$pkgver
-  ./configure --prefix=/Library/ArchMac \
-    --disable-static --with-ipc=sysv
-  make wrapped.h
-  make libmacosx.la
-  make
+    cd $srcdir/$pkgname-$pkgver
+    ./configure --prefix=/Library/ArchMac \
+        --disable-static --with-ipc=sysv
+    make wrapped.h
+    make libmacosx.la
+    make
 }
 
 package() {
-  cd $srcdir/$pkgname-$pkgver
-  make DESTDIR=$pkgdir install
+    cd $srcdir/$pkgname-$pkgver
+    make DESTDIR=$pkgdir install
 
-  # install README for sysv/tcp usage
-  mkdir -p $pkgdir/Library/ArchMac/share/doc/$pkgname
-  install -m644 $srcdir/$pkgname-$pkgver/README \
-    $pkgdir/Library/ArchMac/share/doc/$pkgname/README
+    # install README for sysv/tcp usage
+    mkdir -p $pkgdir/Library/ArchMac/share/doc/$pkgname
+    install -m644 $srcdir/$pkgname-$pkgver/README \
+        $pkgdir/Library/ArchMac/share/doc/$pkgname/README
 }
