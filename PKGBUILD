@@ -19,5 +19,5 @@ package() {
 
 	mkdir -p $pkgdir/Library/ArchMac/etc/archmac
 	install -m644 $srcdir/env.sh \
-	  $pkgdir/Library/ArchMac/etc/archmac/
+        $pkgdir/Library/ArchMac/etc/archmac/
 }
