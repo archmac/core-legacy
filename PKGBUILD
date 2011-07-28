@@ -1,7 +1,7 @@
 
 pkgname=osx-system
 pkgver=10.6
-pkgrel=9
+pkgrel=10
 pkgdesc='Software provided by OS X'
 arch=('any')
 url='http://www.apple.com/macosx'
@@ -16,6 +16,7 @@ provides=('bash'
           'openssl'=0.9
           'perl'=5.10.0
           'perl-error'
+          'python'=2.6
           'sed'
           'sh'
           'zlib'=1.2)
