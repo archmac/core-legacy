@@ -1,14 +1,14 @@
 
 pkgname=filesystem
 pkgver=0.2
-pkgrel=3
+pkgrel=4
 pkgdesc='Base filesystem'
 arch=('any')
 license=('GPL')
 url='http://www.archmac.org'
 groups=('base')
 source=(env.sh)
-md5sums=('2940f91c69b1bf33ffe3b1115db5be20')
+md5sums=('4aaa9ca6b1d0d88e704dd46c1fcea6f8')
 
 package() {
 	cd $srcdir
