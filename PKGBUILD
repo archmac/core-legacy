@@ -27,10 +27,12 @@ PKGEXT='.pkg.tar.gz'
 build() {
     cd $srcdir/$pkgname-$pkgver
 
+    export CFLAGS="-I/Library/ArchMac/include"
+
     # to work with Macintosh's 'strip'
     sed -i '' -e 's/--strip-debug/-S/' scripts/makepkg.sh.in
-    CFLAGS="-I/Library/ArchMac/include" \
-        ./configure --prefix=/Library/ArchMac --enable-doc
+
+    ./configure --prefix=/Library/ArchMac --enable-doc
 
     # to add required libraries
     patch -p0 < $startdir/fix_libaplm_libs.patch
