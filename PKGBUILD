@@ -9,7 +9,7 @@ url="http://packages.debian.org/fakeroot"
 groups=('base-devel')
 depends=('filesystem' 'sed' 'sh')
 options=('!libtool')
-source=(http://ftp.debian.org/pool/main/f/${pkgname}/${pkgname}_${pkgver}.orig.tar.bz2)
+source=(http://ftp.debian.org/pool/main/f/fakeroot/fakeroot_${pkgver}.orig.tar.bz2)
 md5sums=('e8470aa7e965bfc74467de0e594e60b6')
 
 build() {
