@@ -1,7 +1,7 @@
 
 pkgname=filesystem
 pkgver=0.2
-pkgrel=4
+pkgrel=5
 pkgdesc='Base filesystem'
 arch=('any')
 license=('GPL')
@@ -13,7 +13,7 @@ md5sums=('4aaa9ca6b1d0d88e704dd46c1fcea6f8')
 package() {
 	cd $srcdir
 
-	for dir in bin etc include lib share var; do
+	for dir in bin etc frameworks include lib share var; do
 		install -d -m755 $pkgdir/Library/ArchMac/$dir
 	done
 
