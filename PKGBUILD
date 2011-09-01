@@ -12,7 +12,7 @@ optdepends=('fakeroot: for makepkg usage as normal user'
             'curl: for rankmirrors usage')
 backup=(Library/ArchMac/etc/pacman.conf Library/ArchMac/etc/makepkg.conf)
 options=(!libtool)
-source=(ftp://ftp.archlinux.org/other/pacman/${pkgname}-${pkgver}.tar.gz
+source=(ftp://ftp.archlinux.org/other/pacman/pacman-${pkgver}.tar.gz
         pacman.conf
         makepkg.conf
         fix_libaplm_libs.patch)
