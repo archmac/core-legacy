@@ -9,7 +9,7 @@ license=('Various')
 groups=('base')
 provides=('bash'
           'bzip2'
-          'curl'
+          'curl'=7.9
           'expat'=1.5
           'libarchive'=2.6
           'libedit'
