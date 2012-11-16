@@ -11,13 +11,13 @@ source=(env.sh)
 md5sums=('4aaa9ca6b1d0d88e704dd46c1fcea6f8')
 
 package() {
-	cd $srcdir
+    cd $srcdir
 
-	for dir in bin etc frameworks include lib share var; do
-		install -d -m755 $pkgdir/Library/ArchMac/$dir
-	done
+    for dir in bin etc frameworks include lib share var; do
+        install -d -m755 $pkgdir/Library/ArchMac/$dir
+    done
 
-	mkdir -p $pkgdir/Library/ArchMac/etc/archmac
-	install -m644 $srcdir/env.sh \
+    mkdir -p $pkgdir/Library/ArchMac/etc/archmac
+    install -m644 $srcdir/env.sh \
         $pkgdir/Library/ArchMac/etc/archmac/
 }
