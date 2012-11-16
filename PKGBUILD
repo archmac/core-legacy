@@ -28,14 +28,13 @@ build() {
     cd $srcdir/$pkgname-$pkgver
 
     export CFLAGS="-I/Library/ArchMac/include"
+    export LIBS="$LIBS -lcrypto"
 
     # to work with Macintosh's 'strip'
     sed -i '' -e 's/--strip-debug/-S/' scripts/makepkg.sh.in
 
     ./configure --prefix=/Library/ArchMac --enable-doc
 
-    # to add required libraries
-    patch -p0 < $startdir/fix_libaplm_libs.patch
     make
 }
 
