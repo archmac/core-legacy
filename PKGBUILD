@@ -1,7 +1,7 @@
 
 pkgname=pacman
-pkgver=3.5.3
-pkgrel=12
+pkgver=4.0.3
+pkgrel=1
 pkgdesc="A library-based package manager with dependency support"
 arch=('i386' 'x86_64')
 url="http://www.archlinux.org/pacman/"
@@ -15,12 +15,9 @@ options=(!libtool)
 source=(ftp://ftp.archlinux.org/other/pacman/pacman-${pkgver}.tar.gz
         pacman.conf
         makepkg.conf)
-md5sums=('c36c18ed4d8ec69c0ecb4f9684266901'
+md5sums=('387965c7125e60e5f0b9ff3b427fe0f9'
          '281449dc2c0587f58cc1a9a2e2baa2f8'
          '29fe9ac875463dd23fbe44da86cfcc78')
-
-# keep an upgrade path for older installations
-PKGEXT='.pkg.tar.gz'
 
 build() {
     cd $srcdir/$pkgname-$pkgver
