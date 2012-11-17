@@ -14,12 +14,10 @@ backup=(Library/ArchMac/etc/pacman.conf Library/ArchMac/etc/makepkg.conf)
 options=(!libtool)
 source=(ftp://ftp.archlinux.org/other/pacman/pacman-${pkgver}.tar.gz
         pacman.conf
-        makepkg.conf
-        fix_libaplm_libs.patch)
+        makepkg.conf)
 md5sums=('c36c18ed4d8ec69c0ecb4f9684266901'
          '281449dc2c0587f58cc1a9a2e2baa2f8'
-         '29fe9ac875463dd23fbe44da86cfcc78'
-         '29b24726b032c8867550b4e7fbb401e8')
+         '29fe9ac875463dd23fbe44da86cfcc78')
 
 # keep an upgrade path for older installations
 PKGEXT='.pkg.tar.gz'
