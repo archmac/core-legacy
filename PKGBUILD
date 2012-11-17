@@ -27,7 +27,7 @@ PKGEXT='.pkg.tar.gz'
 build() {
     cd $srcdir/$pkgname-$pkgver
 
-    export CFLAGS="-I/Library/ArchMac/include"
+    export CFLAGS="$CFLAGS -I/Library/ArchMac/include"
     export LIBS="$LIBS -lcrypto"
 
     # to work with Macintosh's 'strip'
