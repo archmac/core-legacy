@@ -1,22 +1,28 @@
 
-pkgname=osx-system
-pkgver=10.6
-pkgrel=10
+pkgname=('osx-lion' 'osx-mountainlion')
+pkgver=10
+pkgrel=1
 pkgdesc='Software provided by OS X'
 arch=('any')
 url='http://www.apple.com/macosx'
-license=('Various')
-groups=('base')
+license=('various')
 provides=('bash'
           'bzip2'
-          'curl'=7.9
-          'expat'=1.5
-          'libarchive'=2.6
+          'curl'
+          'expat'
+          'libarchive'
           'libedit'
-          'openssl'=0.9
-          'perl'=5.10.0
-          'perl-error'
-          'python'=2.6
+          'openssl'
+          'perl'
+          'python'
           'sed'
           'sh'
-          'zlib'=1.2)
+          'zlib')
+
+package_osx-lion() {
+    pkgver=10.7
+}
+
+package_osx-mountainlion() {
+    pkgver=10.8
+}
