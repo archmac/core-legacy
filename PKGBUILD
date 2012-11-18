@@ -1,13 +1,13 @@
 
 pkgname=filesystem
-pkgver=0.2
-pkgrel=5
+pkgver=2
+pkgrel=1
 pkgdesc='Base filesystem'
 arch=('any')
 license=('GPL')
 url='http://www.archmac.org'
 groups=('base')
-source=(env.sh)
+source=(profile)
 md5sums=('4aaa9ca6b1d0d88e704dd46c1fcea6f8')
 
 package() {
@@ -17,7 +17,6 @@ package() {
         install -d -m755 $pkgdir/Library/ArchMac/$dir
     done
 
-    mkdir -p $pkgdir/Library/ArchMac/etc/archmac
-    install -m644 $srcdir/env.sh \
-        $pkgdir/Library/ArchMac/etc/archmac/
+    install -m644 $srcdir/profile \
+        $pkgdir/Library/ArchMac/etc/profile
 }
