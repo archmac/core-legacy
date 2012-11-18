@@ -1,7 +1,7 @@
 
 pkgname=pacman
 pkgver=4.0.3
-pkgrel=1
+pkgrel=2
 pkgdesc="A library-based package manager with dependency support"
 arch=('i386' 'x86_64')
 url="http://www.archlinux.org/pacman/"
@@ -12,12 +12,8 @@ optdepends=('fakeroot: for makepkg usage as normal user'
             'curl: for rankmirrors usage')
 backup=(Library/ArchMac/etc/pacman.conf Library/ArchMac/etc/makepkg.conf)
 options=(!libtool)
-source=(ftp://ftp.archlinux.org/other/pacman/pacman-${pkgver}.tar.gz
-        pacman.conf
-        makepkg.conf)
-md5sums=('387965c7125e60e5f0b9ff3b427fe0f9'
-         '281449dc2c0587f58cc1a9a2e2baa2f8'
-         '29fe9ac875463dd23fbe44da86cfcc78')
+source=(ftp://ftp.archlinux.org/other/pacman/pacman-${pkgver}.tar.gz)
+md5sums=('387965c7125e60e5f0b9ff3b427fe0f9')
 
 build() {
     cd $srcdir/$pkgname-$pkgver
@@ -36,12 +32,6 @@ build() {
 package() {
     cd $srcdir/$pkgname-$pkgver
     make DESTDIR=$pkgdir install
-
-    # install ArchMac-specific setup
-    install -m644 $srcdir/pacman.conf \
-        $pkgdir/Library/ArchMac/etc/pacman.conf
-    install -m644 $srcdir/makepkg.conf \
-        $pkgdir/Library/ArchMac/etc/makepkg.conf
 
     # install shell auto-completion
     mkdir -p $pkgdir/Library/ArchMac/etc/bash_completion.d
