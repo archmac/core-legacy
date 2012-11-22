@@ -1,7 +1,7 @@
 
 pkgname=('osx-lion' 'osx-mountainlion')
 pkgver=10
-pkgrel=1
+pkgrel=2
 pkgdesc='Software provided by OS X'
 arch=('any')
 url='http://www.apple.com/macosx'
@@ -15,6 +15,7 @@ provides=('bash'
           'openssl'
           'perl'
           'python'
+          'ruby'
           'sed'
           'sh'
           'zlib')
