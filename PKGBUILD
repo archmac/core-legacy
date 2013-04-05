@@ -14,6 +14,7 @@ md5sums=(bea628be77838aaa7323a2f7601c2d7e)
 build() {
     cd $srcdir/$pkgname-$pkgver
     ./configure --prefix=/Library/ArchMac \
+        --mandir=/Library/ArchMac/man \
         --disable-static --with-ipc=sysv
     make wrapped.h
     make libmacosx.la
