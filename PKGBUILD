@@ -1,14 +1,16 @@
 
-pkgname=filesystem
+pkgname=archmac
 pkgver=2
-pkgrel=2
+pkgrel=19
 pkgdesc='Base filesystem'
-arch=('any')
-license=('GPL')
+arch=(any)
+license=(GPL)
 url='http://www.archmac.org'
-groups=('base')
+groups=(base)
 source=(profile)
-md5sums=('3ff089d102da0872f409811dd742cbda')
+replaces=(filesystem)
+conflicts=(filesystem)
+md5sums=(3ff089d102da0872f409811dd742cbda)
 
 package() {
     cd $srcdir
