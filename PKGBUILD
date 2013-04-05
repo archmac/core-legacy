@@ -1,16 +1,15 @@
 
 pkgname=fakeroot
 pkgver=1.14.4
-pkgrel=7
+pkgrel=8
 pkgdesc="Gives a fake root environment, useful for building packages as a non-privileged user"
-arch=('i386' 'x86_64')
-license=('GPL')
+arch=(i386 x86_64)
+license=(GPL)
 url="http://packages.debian.org/fakeroot"
-groups=('base-devel')
-depends=('filesystem' 'sed' 'sh')
-options=('!libtool')
+groups=(core)
+depends=(bash sed)
 source=(http://ftp.debian.org/debian/pool/main/f/fakeroot/fakeroot_${pkgver}.orig.tar.bz2)
-md5sums=('bea628be77838aaa7323a2f7601c2d7e')
+md5sums=(bea628be77838aaa7323a2f7601c2d7e)
 
 build() {
     cd $srcdir/$pkgname-$pkgver
