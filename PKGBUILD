@@ -13,12 +13,14 @@ provides=('bash'
           'libarchive'
           'libedit'
           'openssl'
+          'osx-system'
           'perl'
           'python'
           'ruby'
           'sed'
           'sh'
           'zlib')
+conflicts=('osx-system')
 
 package_osx-lion() {
     pkgver=10.7
