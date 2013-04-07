@@ -2,8 +2,8 @@ pkgname=NAME
 pkgver=VERSION
 pkgrel=1
 pkgdesc=""
-arch=('i386' 'x86_64')
-url="http://example.com/"
+arch=(i386 x86_64)
+url='http://example.com/'
 license=('apache2')
 groups=()
 depends=()
@@ -17,13 +17,17 @@ options=()
 hooks=()
 install=
 changelog=
-source=($pkgname-$pkgver.tar.gz)
+source=($url/download/$pkgname-$pkgver.tar.gz)
 noextract=()
-md5sums=() #generate with 'makepkg -g'
+md5sums=()
 
 build() {
     cd $srcdir/$pkgname-$pkgver
-    ./configure --prefix=/Library/ArchMac
+    ./configure --prefix=/Library/ArchMac \
+                --docdir=/Library/ArchMac/doc \
+                --mandir=/Library/ArchMac/man \
+                --sbindir=/Library/ArchMac/bin \
+                --infodir=/Library/ArchMac/info
     make
 }
 
