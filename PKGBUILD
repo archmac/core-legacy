@@ -24,6 +24,7 @@ build() {
     sed -i '' -e 's/--strip-debug/-S/' scripts/makepkg.sh.in
 
     ./configure --prefix=/Library/ArchMac \
+                --docdir=/Library/ArchMac/doc \
                 --mandir=/Library/ArchMac/man \
                 --enable-doc
 
