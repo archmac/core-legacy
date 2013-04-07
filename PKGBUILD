@@ -1,7 +1,7 @@
 
 pkgname=archmac
 pkgver=2
-pkgrel=19
+pkgrel=20
 pkgdesc='Base filesystem'
 arch=(any)
 license=(GPL)
