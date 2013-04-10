@@ -1,7 +1,7 @@
 
 pkgname=pacman
 pkgver=4.0.3
-pkgrel=7
+pkgrel=9
 pkgdesc="A library-based package manager with dependency support"
 arch=(i386 x86_64)
 url="http://www.archlinux.org/pacman/"
@@ -24,9 +24,7 @@ build() {
     sed -i '' -e 's/--strip-debug/-S/' scripts/makepkg.sh.in
 
     ./configure --prefix=/Library/ArchMac \
-                --docdir=/Library/ArchMac/doc \
-                --mandir=/Library/ArchMac/man \
-                --enable-doc
+                --mandir=/Library/ArchMac/man
 
     make
 }
