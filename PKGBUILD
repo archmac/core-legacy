@@ -1,7 +1,7 @@
 
 pkgname=pacman
 pkgver=4.0.3
-pkgrel=6
+pkgrel=7
 pkgdesc="A library-based package manager with dependency support"
 arch=(i386 x86_64)
 url="http://www.archlinux.org/pacman/"
@@ -35,8 +35,7 @@ package() {
     cd $srcdir/$pkgname-$pkgver
     make DESTDIR=$pkgdir install
 
-    mkdir -p -m757 $pkgdir/Library/ArchMac/pacman
-    install -m644 $srcdir/makepkg.conf $pkgdir/Library/ArchMac/pacman
+    install -m644 $srcdir/makepkg.conf $pkgdir/Library/ArchMac/etc
 
     # install shell auto-completion
     mkdir -p $pkgdir/Library/ArchMac/etc/bash_completion.d
