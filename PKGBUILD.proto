@@ -24,7 +24,7 @@ md5sums=()
 build() {
     cd $srcdir/$pkgname-$pkgver
     ./configure --prefix=/Library/ArchMac \
-                --docdir=/Library/ArchMac/doc \
+                --docdir=/Library/ArchMac/doc/$pkgname \
                 --mandir=/Library/ArchMac/man \
                 --sbindir=/Library/ArchMac/bin \
                 --infodir=/Library/ArchMac/info
