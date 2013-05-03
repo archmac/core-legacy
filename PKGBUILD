@@ -10,7 +10,7 @@ groups=(base)
 source=(profile)
 replaces=(filesystem)
 conflicts=(filesystem)
-md5sums=(3ff089d102da0872f409811dd742cbda)
+md5sums=(4ebe9dba884c9f8c0ae74a475c5d8712)
 
 package() {
     cd $srcdir
