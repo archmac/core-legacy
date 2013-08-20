@@ -7,7 +7,6 @@ arch=(i386 x86_64)
 license=(GPL)
 url="http://packages.debian.org/fakeroot"
 groups=(core)
-depends=(bash sed)
 source=(http://ftp.debian.org/debian/pool/main/f/fakeroot/fakeroot_${pkgver}.orig.tar.bz2)
 md5sums=(bea628be77838aaa7323a2f7601c2d7e)
 
