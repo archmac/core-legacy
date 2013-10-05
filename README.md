@@ -1,6 +1,5 @@
 This is ArchMac.
 
-    $ git clone http://github.com/archmac/archmac
-    $ cd archmac
-    $ make bootstrap
+    $ git clone --recursive https://github.com/archmac/abs
+    $ cd abs && make bootstrap
 
