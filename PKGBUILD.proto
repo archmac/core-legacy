@@ -1,10 +1,10 @@
 pkgname=NAME
 pkgver=VERSION
 pkgrel=1
-pkgdesc=""
+pkgdesc=''
 arch=(i386 x86_64)
 url='http://example.com/'
-license=('apache2')
+license=(apache2)
 groups=()
 depends=()
 makedepends=()
@@ -29,6 +29,11 @@ build() {
                 --sbindir=/Library/ArchMac/bin \
                 --infodir=/Library/ArchMac/info
     make
+}
+
+check() {
+    cd $srcdir/$pkgname-$pkgver
+    make check
 }
 
 package() {
