@@ -1,3 +1,4 @@
+# maintainer Andrew Schleifer <me@andrewschleifer.name>
 
 pkgname=fakeroot
 pkgver=1.14.4
