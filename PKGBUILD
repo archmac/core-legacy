@@ -1,3 +1,4 @@
+# maintainer Andrew Schleifer <me@andrewschleifer.name>
 
 pkgname=pacman
 pkgver=4.0.3
