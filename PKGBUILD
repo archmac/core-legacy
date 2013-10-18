@@ -2,12 +2,12 @@
 
 pkgname=archmac
 pkgver=2
-pkgrel=21
+pkgrel=22
 pkgdesc='Base filesystem'
 arch=(any)
 license=(GPL)
 url='http://www.archmac.org'
-groups=(base)
+groups=(core)
 source=(profile)
 replaces=(filesystem)
 conflicts=(filesystem)
