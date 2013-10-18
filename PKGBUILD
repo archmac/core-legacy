@@ -2,7 +2,7 @@
 
 pkgname=pacman
 pkgver=4.0.3
-pkgrel=10
+pkgrel=11
 pkgdesc="A library-based package manager with dependency support"
 arch=(i386 x86_64)
 url="http://www.archlinux.org/pacman/"
@@ -23,6 +23,8 @@ build() {
 
     # to work with Macintosh's 'strip'
     sed -i '' -e 's/--strip-debug/-S/' scripts/makepkg.sh.in
+    # to work with Macintosh's 'mktemp'
+    sed -i '' -e 's/(mktemp)/(mktemp -t $$)/' scripts/makepkg.sh.in
 
     ./configure --prefix=/Library/ArchMac \
                 --mandir=/Library/ArchMac/man
