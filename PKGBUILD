@@ -1,3 +1,4 @@
+# maintainer Andrew Schleifer <me@andrewschleifer.name>
 
 pkgname=(osx-system)
 pkgver=10.8
