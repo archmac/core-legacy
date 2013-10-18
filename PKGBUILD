@@ -1,3 +1,4 @@
+# maintainer Andrew Schleifer <me@andrewschleifer.name>
 
 pkgname=archmac
 pkgver=2
