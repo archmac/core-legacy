@@ -1,17 +1,23 @@
 # maintainer Andrew Schleifer <me@andrewschleifer.name>
 
 pkgname=archmac
-pkgver=2
-pkgrel=22
-pkgdesc='Base filesystem'
+pkgver=3
+pkgrel=1
+pkgdesc='ArchMac foundation'
 arch=(any)
 license=(GPL)
 url='http://www.archmac.org'
 groups=(core)
-source=(profile)
-replaces=(filesystem)
-conflicts=(filesystem)
-md5sums=(df650a4de6503a72f48c9ad7cf3d2337)
+provides=(bash bzip2 curl expat libarchive libedit openssl perl python ruby sed zlib)
+replaces=(filesystem osx-system)
+conflicts=(filesystem osx-system)
+source=(profile
+        archive.h
+        archive_entry.h)
+md5sums=(df650a4de6503a72f48c9ad7cf3d2337
+         f63f14fddd171901e7d2123e8af40945
+         48f9e8e2683f890941ee05990e1d014d)
+
 
 package() {
     cd $srcdir
@@ -20,7 +26,8 @@ package() {
         install -d -m755 $pkgdir/Library/ArchMac/$dir
     done
 
-    install -m644 $srcdir/profile \
-        $pkgdir/Library/ArchMac/etc/profile
+    install -m644 $srcdir/profile $pkgdir/Library/ArchMac/etc/profile
+    install -m644 archive.h $pkgdir/Library/ArchMac/include
+    install -m644 archive_entry.h $pkgdir/Library/ArchMac/include
 }
 

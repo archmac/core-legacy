@@ -50,7 +50,6 @@ prereqs:
 core:
 	cd fakeroot   && PATH=$(WORK)/bin:$$PATH makepkg -df
 	cd archmac    && PATH=$(WORK)/bin:$$PATH makepkg -df
-	cd osx-system && PATH=$(WORK)/bin:$$PATH makepkg -df
 	cd pacman     && PATH=$(WORK)/bin:$$PATH makepkg -df
 
 cleanup:
@@ -59,7 +58,6 @@ cleanup:
 release:
 	cp `ls fakeroot/*.pkg.tar.gz | tail -1` $(WORK)
 	cp `ls archmac/*.pkg.tar.gz | tail -1` $(WORK)
-	cp `ls osx-system/*.pkg.tar.gz | tail -1` $(WORK)
 	cp `ls pacman/*.pkg.tar.gz | tail -1` $(WORK)
 	cd $(WORK) && mkdir -p Library/ArchMac/var/lib/pacman
 	cd $(WORK) && sudo pacman -U --noconfirm -r. -b Library/ArchMac/var/lib/pacman *.pkg.tar.gz
