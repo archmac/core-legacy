@@ -20,6 +20,7 @@ build() {
     cd $srcdir/$pkgname-$pkgver
 
     export LIBS="$LIBS -lcrypto"
+    export CFLAGS="$CFLAGS -std=gnu89"
 
     # to work with Macintosh's 'strip'
     sed -i '' -e 's/--strip-debug/-S/' scripts/makepkg.sh.in
