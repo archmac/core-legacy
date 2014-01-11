@@ -45,6 +45,7 @@ prereqs:
 	cd $(WORK)/src/pacman-*     && CFLAGS="-I$(WORK)/include -std=gnu89" LIBS=-lcrypto ./configure --prefix=$(WORK) --disable-doc
 	cd $(WORK)/src/pacman-*     && CFLAGS="-I$(WORK)/include -std=gnu89" LIBS=-lcrypto make install
 	echo CFLAGS=\"-I$(WORK)/include -L$(WORK)/lib\" >> $(WORK)/etc/makepkg.conf
+	echo SRCDEST=/tmp >> $(WORK)/etc/makepkg.conf
 
 core:
 	cd fakeroot   && PATH=$(WORK)/bin:$$PATH makepkg -df
