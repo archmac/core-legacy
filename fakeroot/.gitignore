@@ -1,4 +1,0 @@
-pkg
-src
-*.pkg.tar.gz
-fakeroot_*.orig.tar.bz2
