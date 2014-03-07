@@ -2,7 +2,7 @@
 
 pkgname=pacman
 pkgver=4.0.3
-pkgrel=11
+pkgrel=12
 pkgdesc="A library-based package manager with dependency support"
 arch=(i386 x86_64)
 url="http://www.archlinux.org/pacman/"
@@ -46,5 +46,10 @@ package() {
     mkdir -p $pkgdir/Library/ArchMac/share/zsh/site-functions
     install -m644 contrib/zsh_completion \
         $pkgdir/Library/ArchMac/share/zsh/site-functions/_pacman
+    # install license
+    mkdir -p $pkgdir/Library/ArchMac/doc/$pkgname
+    install -m644 $srcdir/$pkgname-$pkgver/COPYING \
+        $pkgdir/Library/ArchMac/doc/$pkgname/LICENSE
+
 }
 
