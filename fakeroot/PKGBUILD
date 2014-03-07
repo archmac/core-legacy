@@ -2,7 +2,7 @@
 
 pkgname=fakeroot
 pkgver=1.18.4
-pkgrel=1
+pkgrel=2
 pkgdesc="Gives a fake root environment, useful for building packages as a non-privileged user"
 arch=(i386 x86_64)
 license=(GPL)
@@ -28,4 +28,6 @@ package() {
     mkdir -p $pkgdir/Library/ArchMac/doc/$pkgname
     install -m644 $srcdir/$pkgname-$pkgver/README \
         $pkgdir/Library/ArchMac/doc/$pkgname/README
+    install -m644 $srcdir/$pkgname-$pkgver/COPYING \
+        $pkgdir/Library/ArchMac/doc/$pkgname/LICENSE
 }
