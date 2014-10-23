@@ -5,8 +5,8 @@ endif
 DATE:=$(shell date +%Y-%m-%d)
 ARCHIVES=\
     http://ftpmirror.gnu.org/autoconf/autoconf-2.69.tar.gz \
-    http://ftpmirror.gnu.org/automake/automake-1.12.tar.gz \
-    http://ftpmirror.gnu.org/libtool/libtool-2.4.tar.gz \
+    http://ftpmirror.gnu.org/automake/automake-1.14.tar.gz \
+    http://ftpmirror.gnu.org/libtool/libtool-2.4.2.tar.gz \
     https://github.com/downloads/libarchive/libarchive/libarchive-2.8.3.tar.gz \
     http://ftp.us.debian.org/debian/pool/main/f/fakeroot/fakeroot_1.18.4.orig.tar.bz2 \
     ftp://ftp.archlinux.org/other/pacman/pacman-4.0.3.tar.gz
